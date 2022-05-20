@@ -1,5 +1,5 @@
 export interface TableRowType{
-  id: number;
+  id?: string|number;
   name: string,
   image: string,
   attack: number,
