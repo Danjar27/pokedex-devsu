@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props extends React.HTMLProps<HTMLInputElement> {
   name: string;
-  label: string;
+  label?: string;
   noLabel?: boolean;
   className?: string;
 }
