@@ -4,5 +4,5 @@ export interface TableRowType{
   image: string,
   attack: number,
   defense: number,
-  acciones: string
+  actions?: string
 }
