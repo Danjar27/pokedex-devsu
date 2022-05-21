@@ -1,8 +1,8 @@
 import {render} from "@testing-library/react";
 import '@testing-library/jest-dom';
-import FormTable from "../../../src/components/organisms/FormTable";
+import Table from "../../../src/components/organisms/Table";
 
-describe('FormTable Component', () => {
+describe('Table Component', () => {
 
   const props = {
     name: 'test',
@@ -10,11 +10,11 @@ describe('FormTable Component', () => {
   }
 
   test('component should exist', () => {
-    expect(render(<FormTable {...props}/>)).toBeTruthy();
+    expect(render(<Table {...props}/>)).toBeTruthy();
   });
 
-  test('component class must be "FormTable"', () => {
-    const {container} = render(<FormTable {...props}/>);
+  test('component class must be "Table"', () => {
+    const {container} = render(<Table {...props}/>);
     const {firstElementChild} = container;
     expect(firstElementChild?.className).toBe('FormTable');
   });

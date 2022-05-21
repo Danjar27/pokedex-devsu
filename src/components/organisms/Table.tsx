@@ -3,7 +3,7 @@ import React from 'react';
 interface Props extends React.HTMLProps<HTMLTableElement> {
 
 }
-const FormTable: React.FC<Props> = ({
+const Table: React.FC<Props> = ({
   children,
 }) => {
   return (
@@ -18,4 +18,4 @@ const FormTable: React.FC<Props> = ({
   );
 }
 
-export default FormTable;
+export default Table;
