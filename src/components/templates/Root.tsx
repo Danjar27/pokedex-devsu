@@ -84,9 +84,10 @@ const Root = () => {
     <ContainerPage>
       <h2>Listado de Pokemon</h2>
       <section className="Search_section">
-        <div>
-          <SearchInput onSearch={async (name) => setFilter(name)}/>
-        </div>
+        <SearchInput
+          placeholder="Buscar por nombre"
+          onSearch={(name) => setFilter(name)}
+        />
         <RoundedButton text="Nuevo" icon={"/images/add_icon.svg"} onClick={onOpenHandler}/>
       </section>
       <section style={{marginTop: 20}}>
@@ -101,7 +102,7 @@ const Root = () => {
           }
         </Table>
         {isLoading && <Loading/>}
-        {!thereArePokemons && filter && !isLoading && <NoResults name={filter}/>}
+        {!thereArePokemons && filter && <NoResults name={filter}/>}
       </section>
       {showForm &&
         <div ref={bottom}>

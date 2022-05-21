@@ -58,6 +58,7 @@ const PokemonForm: React.FC<Props> = ({
                 onChange={handleChange}
               />
               <FormImageInput
+                placeholder="URL de la imagen"
                 className="Pokemon_form_image_input"
                 name="image"
                 label="Imagen:"
