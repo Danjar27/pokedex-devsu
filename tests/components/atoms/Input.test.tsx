@@ -1,8 +1,8 @@
 import {render} from "@testing-library/react";
 import '@testing-library/jest-dom';
-import FormInput from "../../../src/components/atoms/FormInput";
+import Input from "../../../src/components/atoms/Input";
 
-describe('FormInput Component', () => {
+describe('Input Component', () => {
 
   const props = {
     name: 'test',
@@ -10,21 +10,21 @@ describe('FormInput Component', () => {
   }
 
   test('component should exist', () => {
-    expect(render(<FormInput {...props}/>)).toBeTruthy();
+    expect(render(<Input {...props}/>)).toBeTruthy();
   });
 
   test('component should have a label', () => {
-    const { getByText } = render(<FormInput {...props} label="test" />);
+    const { getByText } = render(<Input {...props} label="test" />);
     expect(getByText('test')).toBeTruthy();
   });
 
   test('component should have an input', () => {
-    const { getByRole } = render(<FormInput {...props} />);
+    const { getByRole } = render(<Input {...props} />);
     expect(getByRole('textbox')).toBeTruthy();
   });
 
   test('label must be optional', () => {
-    const { queryByText } = render(<FormInput noLabel {...props} />);
+    const { queryByText } = render(<Input noLabel {...props} />);
     expect(queryByText('test')).toBeFalsy();
   });
 
