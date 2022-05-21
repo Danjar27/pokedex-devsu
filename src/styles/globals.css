@@ -82,7 +82,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-inline: 1rem;
 }
 
 .icon_button{
@@ -104,6 +103,7 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
   border-collapse: collapse;
   color: var(--accent);
+  background: white;
   border: 1px solid var(--light-gray);
 }
 
@@ -135,6 +135,149 @@ a {
 }
 
 .container{
-  padding-inline: 14rem;
+  padding-inline: 20%;
   padding-block: 5rem;
+}
+
+.container_background{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(circle at 1px 1px, #d0d0d0 1px, transparent 0);
+  background-size: 10px 10px;
+  z-index: -1;
+}
+
+.Pokemon_form{
+  margin-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border: 2px solid var(--light-gray);
+  background: white;
+}
+
+.Pokemon_form_title{
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.Pokemon_form_fields{
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Pokemon_form_field{
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pokemon_form_buttons{
+  margin-top: 4rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.Pokemon_form_input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  accent-color: var(--purple);
+}
+
+.Pokemon_form_image_input{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  accent-color: var(--purple);
+}
+
+.Pokemon_form_input label .Pokemon_form_image_input label{
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.FormInputError{
+  border-radius: 5px;
+  width: 16rem;
+  height: 3rem;
+  border: 2px solid red;
+  outline: none;
+}
+
+.disabled{
+  filter: grayscale(100%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.load_spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.load_spinner div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--purple);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.load_spinner div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.load_spinner div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.load_spinner div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.load_spinner div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
 }
