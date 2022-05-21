@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import Input from "../atoms/Input";
 import useDebounce from "../../hooks/useDebounce";
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   onSearch: (name: string) => void
 }
 
 const SearchInput:React.FC<Props> = ({
-  onSearch
+  onSearch,
+  ...props
 }) => {
 
   const [value, setValue] = useState('');
@@ -21,7 +22,7 @@ const SearchInput:React.FC<Props> = ({
     setValue(e.target.value)
   }
 
-  return <Input noLabel name="searchInput" onChange={handleChange} value={value}/>
+  return <Input noLabel name="searchInput" onChange={handleChange} value={value} {...props}/>
 
 }
 

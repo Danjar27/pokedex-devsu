@@ -14,7 +14,6 @@ const TableRow = ({
   onDelete,
 }: Props) => {
 
-
   const resultElements = elements.map((element) => (
     <Fragment key={element.id}>
       <div>{element.name}</div>
@@ -23,6 +22,9 @@ const TableRow = ({
           style={{width: "40%"}}
           src={element.image}
           alt="pokemon"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/images/placeholder_image.svg";
+          }}
         />
       </div>
       <div>{element.attack}</div>
