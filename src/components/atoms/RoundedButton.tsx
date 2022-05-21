@@ -15,7 +15,11 @@ const RoundedButton: React.FC<Props> = ({
   ...props
 }) => {
   return (
-    <button {...props} type={type || "button"} className="RoundedButton center">
+    <button
+      className={`RoundedButton center ${props.disabled && 'disabled'}`}
+      type={type || "button"}
+      {...props}
+    >
       {icon && <img src={icon} alt="button_icon" className="button_icon"/>}
       <p className="button_text">
         {text}
